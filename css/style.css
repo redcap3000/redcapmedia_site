@@ -30,7 +30,8 @@ audio[controls], canvas, video { display: inline-block; *display: inline; *zoom:
  */
 
 html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
-	background-color: silver;
+	background-color: orange;
+	background-image: url(../grx/hbg.png);
 }
 
 body { margin: 0; font-size: 13px; line-height: 1.231; }
@@ -279,36 +280,69 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 #container {
 		margin: auto 8em;
-		width: 50em;
+		width: 60em;float: left;
+	background-color: black;
 }
 
 header h1{margin-bottom: 1em;
+	background: url(hbg.gif) repeat;
 }
 
 nav {
 	float: left;
 }
+
+nav:hover{
+	
+}
 nav a{
-	width: 6.7em;
-	height: 2.2em;
+	width: 8em;
+	height: 2.8em;
 	text-align: center;
 	display: block;float: left;
  	font-size: 1.25em;
 	text-decoration: none;
-	line-height: 1.8em;
+	line-height: 7.8em;
+	color: orange;
+	font-weight: bold;
+	letter-spacing: .15em;
+	background-image: url(../grx/hbg_.png);
+	margin-bottom: 2em;
 }
 
-#main {float: left;width: 40em;
+#main {float: left;width: 55em;margin:0;
+	background: white url(../grx/hbg.png) repeat-y -9em;
+	padding: 1.5em 2.5em 0;
 }
 nav a:hover{
 	background-color: gray;
-	color: white;
+	color: red;
 }
 
 header {text-align:center;padding: 2.5em 0 ;
-	background-color: #414da7;
+	background-color: black;
 	color: #fffeff;
+	background-image: url(../grx/hbg.png);
 }
+
+footer {
+	background: orange url(../grx/hbg.png) repeat-x 0 -9em;float: left; width: 100%;color: white;padding-top: .25em;}
+
+#container footer h4 {
+	margin: 0;margin-top: 1em;padding:1em 0;
+
+	text-align: right;
+	font-weight: bold;
+	letter-spacing: .35em;
+	font-size: 1.2em;
+}
+
+#main h3 {
+		background: white url(../grx/hbg.png) repeat-x 0 -8em;
+		line-height: 4em;margin: 0;padding: 0;
+}
+
+
 
 p,h2,h3{
 	width: 55%;
@@ -322,4 +356,3 @@ h2{
 #main img {
 	float: right;clear: both;
 }
-
