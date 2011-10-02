@@ -31,7 +31,7 @@ audio[controls], canvas, video { display: inline-block; *display: inline; *zoom:
 
 html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
 	background-color: orange;
-	background-image: url(../grx/hbg.png);
+	background-image: url(../grx/hbg_n.png);
 }
 
 body { margin: 0; font-size: 13px; line-height: 1.231; }
@@ -282,10 +282,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 		margin: auto 8em;
 		width: 60em;float: left;
 	background-color: black;
+	
 }
 
-header h1{margin-bottom: 1em;
-	background: url(hbg.gif) repeat;
+header h1{margin-bottom: 1em; color: white;letter-spacing: .25em;
 }
 
 nav {
@@ -320,9 +320,8 @@ nav a:hover{
 }
 
 header {text-align:center;padding: 2.5em 0 ;
-	background-color: black;
-	color: #fffeff;
-	background-image: url(../grx/hbg.png);
+	background-color: orange;
+	
 }
 
 footer {
