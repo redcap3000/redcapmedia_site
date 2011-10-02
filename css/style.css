@@ -30,8 +30,7 @@ audio[controls], canvas, video { display: inline-block; *display: inline; *zoom:
  */
 
 html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
-	background-color: orange;
-	background-image: url(../grx/hbg_n.png);
+	background: whitesmoke url(../grx/hbg_n.png) repeat-y fixed -1.95em;
 }
 
 body { margin: 0; font-size: 13px; line-height: 1.231; }
@@ -285,7 +284,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 	
 }
 
-header h1{margin-bottom: 1em; color: white;letter-spacing: .25em;
+header h1{margin-bottom: 1em; color: white;letter-spacing: .25em;text-align: left; padding-left: 1em;
 }
 
 nav {
@@ -303,7 +302,7 @@ nav a{
  	font-size: 1.25em;
 	text-decoration: none;
 	line-height: 7.8em;
-	color: orange;
+	color: white;
 	font-weight: bold;
 	letter-spacing: .15em;
 	background-image: url(../grx/hbg_.png);
@@ -320,12 +319,12 @@ nav a:hover{
 }
 
 header {text-align:center;padding: 2.5em 0 ;
-	background-color: orange;
+	background-color: black;
 	
 }
 
 footer {
-	background: orange url(../grx/hbg.png) repeat-x 0 -9em;float: left; width: 100%;color: white;padding-top: .25em;}
+	background: white url(../grx/hbg.png) repeat-x 0 -9em;float: left; width: 100%;color: white;padding-top: .25em;}
 
 #container footer h4 {
 	margin: 0;margin-top: 1em;padding:1em 0;
@@ -334,6 +333,7 @@ footer {
 	font-weight: bold;
 	letter-spacing: .35em;
 	font-size: 1.2em;
+	color: black;
 }
 
 #main h3 {
