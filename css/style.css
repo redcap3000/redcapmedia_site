@@ -309,9 +309,9 @@ nav a{
 	margin-bottom: 2em;
 }
 
-#main {float: left;width: 55.5em;margin:0;
+#main {float: left;width: 57.5em;margin:0;
 	background: white url(../grx/hbg.png) repeat-y -9em;
-	padding: .5em 2.25em 0;
+	padding: .5em 0 0 2.5em;
 }
 nav a:hover{
 	background-color: gray;
@@ -345,9 +345,9 @@ footer {
 
 
 p{
-	padding: .75em;
-	width: 17em;
-	float: left;
+	padding: 0 .75em 0 0;
+	width: 17.25em;
+	float: left;margin: 0;margin-bottom: 1em;clear: right;
 }
 h3{
 	width: 48.2em;
