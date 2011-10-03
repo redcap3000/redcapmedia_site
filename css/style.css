@@ -277,7 +277,7 @@ table { border-collapse: collapse; border-spacing: 0; }
   img { max-width: 100% !important; }
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3{ page-break-after: avoid; }
+  h2, h3{ page-break-after: avoid;}
 }
 
 #container {
@@ -287,7 +287,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 	
 }
 
-header h1{margin-bottom: 1em; color: red;letter-spacing: .25em;text-align: left; padding-left: 1em;
+header h1{margin-bottom: 1em; color: white;letter-spacing: .25em;text-align: left; padding-left: 1em;
 }
 
 nav {
@@ -321,7 +321,7 @@ nav a:hover{
 	color: red;
 }
 
-header {text-align:center;padding: 2.5em 0 ;
+header {text-align:center;
 	background-color: black;
 	
 }
@@ -340,36 +340,42 @@ footer {
 	color: red;
 }
 
+h1{
+	font: 4em 'Monofett', cursive;clear: both;
+}
+
+#main h4 {
+	clear: none;width: auto;margin: 0;text-align:left;
+}
+
 #main h3 {
 		background: url(../grx/hbg_d.png) repeat-x 0 -8em;
 		line-height: 4em;margin: 0;padding: 0;
 }
 
+body a{
+	color:  red;
+}
 
+header nav a{
+	color: white;
+}
 
 p{
 	padding: 0 .75em 0 0;
 	width: 18.25em;
 	float: left;margin: 0;margin-bottom: 1em;clear: right;
+	
 }
 h3{
-	width: 48.2em;
+	width: 48.2em;clear: both;
 }
 
-h2{;width: 37.5em;color: maroon;margin-bottom: .25em;
+h2{;width: 37.5em;color: maroon;clear: both;font-family: 'Varela Round', sans-serif;
 }
+
+
 
 #main p img {clear: both;margin: 1em;width: 15em;
 }
 
-ul {
-	list-style-type: none !IMPORTANT;float: left;
-padding: 0;
-	margin: 0 !IMPORTANT;
-}
-ul li{clear: none;float: left;
-	}
-
-#main ul li a img {
-	float: right;clear: both;
-}
