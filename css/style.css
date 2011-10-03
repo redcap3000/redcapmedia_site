@@ -98,7 +98,6 @@ sub { bottom: -0.25em; }
    Lists
    ========================================================================== */
 
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; margin: 0; padding: 0; }
 
@@ -263,7 +262,11 @@ table { border-collapse: collapse; border-spacing: 0; }
    ========================================================================== */
  
 @media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+
+
+
+ /* Black prints faster: sanbeiji.com/archives/953 */
   a, a:visited { color: #444 !important; text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
@@ -284,7 +287,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 	
 }
 
-header h1{margin-bottom: 1em; color: white;letter-spacing: .25em;text-align: left; padding-left: 1em;
+header h1{margin-bottom: 1em; color: red;letter-spacing: .25em;text-align: left; padding-left: 1em;
 }
 
 nav {
@@ -334,11 +337,11 @@ footer {
 	font-weight: bold;
 	letter-spacing: .35em;
 	font-size: 1.2em;
-	color: black;
+	color: red;
 }
 
 #main h3 {
-		background: white url(../grx/hbg.png) repeat-x 0 -8em;
+		background: url(../grx/hbg_d.png) repeat-x 0 -8em;
 		line-height: 4em;margin: 0;padding: 0;
 }
 
@@ -346,16 +349,27 @@ footer {
 
 p{
 	padding: 0 .75em 0 0;
-	width: 17.25em;
+	width: 18.25em;
 	float: left;margin: 0;margin-bottom: 1em;clear: right;
 }
 h3{
 	width: 48.2em;
 }
 
-h2{
-	text-align:center;width: 37.5em;
+h2{;width: 37.5em;color: maroon;margin-bottom: .25em;
 }
 
 #main p img {clear: both;margin: 1em;width: 15em;
+}
+
+ul {
+	list-style-type: none !IMPORTANT;float: left;
+padding: 0;
+	margin: 0 !IMPORTANT;
+}
+ul li{clear: none;float: left;
+	}
+
+#main ul li a img {
+	float: right;clear: both;
 }
