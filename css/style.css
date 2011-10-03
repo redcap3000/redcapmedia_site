@@ -329,7 +329,7 @@ footer {
 
 #container footer h4 {
 	margin: 0;margin-top: 1em;padding:1em 0;
-
+	background: white url(../grx/hbg_d.png) repeat-x 0 -8em;
 	text-align: right;
 	font-weight: bold;
 	letter-spacing: .35em;
@@ -344,13 +344,17 @@ footer {
 
 
 
-p,h2,h3{
-	width: 55%;
+p{
+	padding-left: 1em;
+	width: 26.5em;
 	float: left;
+}
+h3{
+	width: 48.2em;
 }
 
 h2{
-	text-align:center;
+	text-align:center;width: 37.5em;
 }
 
 #main img {
