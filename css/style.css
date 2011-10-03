@@ -51,8 +51,11 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
    Links
    ========================================================================== */
 
-a,a:visited { color: black; }
+a,a:visited { color: #d5d5d5; }
 
+#main a{
+	color: black;
+}
 a:focus { outline: thin dotted; }
 
 /* Improve readability when focused and hovered in all browsers: people.opera.com/patrickl/experiments/keyboard/test */
