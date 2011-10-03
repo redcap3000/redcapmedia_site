@@ -30,7 +30,7 @@ audio[controls], canvas, video { display: inline-block; *display: inline; *zoom:
  */
 
 html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
-	background: whitesmoke url(../grx/hbg_n.png) repeat-y fixed -1.95em;
+	background: gray url(../grx/hbg.png) repeat-y fixed -1.95em;
 }
 
 body { margin: 0; font-size: 13px; line-height: 1.231; }
@@ -280,6 +280,10 @@ table { border-collapse: collapse; border-spacing: 0; }
   h2, h3{ page-break-after: avoid;}
 }
 
+h1,h2,h3,h4,h5,nav{
+	font-family: 'Geo', sans-serif;clear: both;
+}
+
 #container {
 		margin: auto 8em;
 		width: 60em;float: left;
@@ -341,7 +345,7 @@ footer {
 }
 
 h1{
-	font: 4em 'Monofett', cursive;clear: both;
+	font-size: 3em;
 }
 
 #main h4 {
@@ -349,8 +353,8 @@ h1{
 }
 
 #main h3 {
-		background: url(../grx/hbg_d.png) repeat-x 0 -8em;
-		line-height: 4em;margin: 0;padding: 0;
+		background: url(../grx/hbg_d.png) repeat-x 0 -6em;
+	margin: 0;padding: 0; font-size:1.65em;line-height:2.5em
 }
 
 body a{
@@ -367,11 +371,8 @@ p{
 	float: left;margin: 0;margin-bottom: 1em;clear: right;
 	
 }
-h3{
-	width: 48.2em;clear: both;
-}
 
-h2{;width: 37.5em;color: maroon;clear: both;font-family: 'Varela Round', sans-serif;
+h2{color: maroon;font-size: 2.5em;
 }
 
 
