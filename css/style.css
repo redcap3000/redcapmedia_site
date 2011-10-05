@@ -30,7 +30,8 @@ audio[controls], canvas, video { display: inline-block; *display: inline; *zoom:
  */
 
 html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
-	background: white url(../grx/hbg_n.png) repeat-y fixed -3em;
+background: silver url(../grx/hbg_n.png) repeat-x fixed 0 -6.75em;
+	
 }
 
 body { margin: 0; font-size: 13px; line-height: 1.231; }
@@ -292,8 +293,8 @@ h2,h3{
 }
 
 #container {
-		margin: auto 8em;
-		width: 60em;float: left;
+		margin: 2em auto;
+		width: 60em;
 	background-color: black;
 	
 }
@@ -323,9 +324,9 @@ nav a{
 	margin-bottom: 3em;
 }
 
-#main {float: left;width: 55.1em;margin:0;
+#main {float: left;width: 58em;margin:0;
 	background: white url(../grx/hbg.png) repeat-x 0 -9em;
-	padding: 2.5em;
+	padding:  1em;
 }
 nav a:hover{
 	background-color: gray;
@@ -334,7 +335,7 @@ nav a:hover{
 
 header {text-align:center;
 	background-color: black;
-	
+	float: left;
 }
 
 footer {
@@ -375,7 +376,7 @@ header nav a{
 
 p{
 	padding: .55em;
-	width: 20em;
+	width: 22.25em;
 	float: left;margin: 0;margin-bottom: 1em;clear: right;
 
 }
