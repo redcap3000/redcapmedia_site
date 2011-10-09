@@ -385,6 +385,41 @@ p,ul{
 		font: 1.25em Georgia, "Times New Roman", Times, serif;
 }
 
+#main ul {
+	list-style-type: none;
+	margin: 0; padding: 0; float: left;
+	width: 15.5em;
+	border-top: solid gray .1em;
+}
+
+
+#main ul li h5 {margin: .5em 0;
+	font: 1.15em/1.75em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-decoration: none;
+	border-right: solid gray .1em;
+	border-bottom: solid gray .1em;padding-bottom: .5em;
+	margin-bottom:.75em;width: 100%;float: left;
+	text-align: left;
+}
+
+#main ul li p {
+	width: auto;
+	font-size: .9em;
+
+}
+
+#main ul li{float: left;
+	margin: 1em;
+}
+
+
+
+
+#main li strong {
+	margin: .5em 0;margin-left: .5em;
+float: left;text-align:center;width: 12.6em;clear: both;
+}
+
 h2{color: maroon;font-size: 2.5em;margin-bottom:.5em;
 }
 
