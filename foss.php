@@ -2,7 +2,9 @@
 // perhaps store as a 'template class ?'
 
 
-require ('../html5_core/html5_core.php');
+require ('html5_core.php');
+$page_title = 'Ronaldo Barbachano - Web Sites';
+$meta_description = 'Open source projects and involvements.';
 class m_ul{
 // ideally design these template classes like the other tag classes
 // describes the order of the method arguments and which each one refers to
