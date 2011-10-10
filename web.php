@@ -1,7 +1,7 @@
 <?php
 require ('html5_core.php');
 $page_title = 'Ronaldo Barbacahno - Web Sites';
-$meta_description = 'Web sites created and living on the web by Ronaldo Barbachano.'
+$meta_description = 'Web sites created and living on the web by Ronaldo Barbachano.';
 $content =  '<h1>Web Sites</h1>
 		<h2>Living on the internet</h2>
 		<p> <H3>RxNix </H3>
