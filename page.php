@@ -34,7 +34,10 @@ $page = new page(
 									array('id'=>'main','role'=>'main')
 								),
 							new _footer(
-								new _h4('Ronaldo Barbachano 2011')
+								new _h4('Ronaldo Barbachano 2011
+<a href="http://www.linkedin.com/in/ronaldob" title="Linkedin">Linked In</a>
+<a href="https://launchpad.net/%7Eronaldo-barbachano" title="Launchpad">Launchpad</a>
+<a href="https://github.com/redcap3000" title="github">Github</a>')
 							)
 									)		
 					 ,array('id'=>'container')
