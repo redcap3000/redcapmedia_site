@@ -23,8 +23,8 @@ $page = new page(
 //											 new _a('web',array('href'=>'web.html')  )
 											 new _a('web.php','web','Web Projects'), 
 											 new _a('open source',array('href'=>'foss.php')  ),
-											 new _a('video',array('href'=>'video.php')  ),
-											 new _a('sound',array('href'=>'sound.php')  ),
+										//	 new _a('video',array('href'=>'video.php')  ),
+										//	 new _a('sound',array('href'=>'sound.php')  ),
 											 new _a('contact',array('href'=>'contact.php')  )
 											)
 										)
