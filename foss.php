@@ -30,7 +30,7 @@ class m_ul{
 $content []= new _h2('Dev Tools');
 
 
-$content []= m_ul::_('<a href="https://github.com/redcap3000/html5_core" title="html 5 core">html5 core</a>','PHP5 HTML 5 Object Classes','Write standards conforming, and parameter validating html 5 using PHP5 objects. Flexible, definable syntax methods for each HTML5 supported tag. Store and retrieve pages in json format, file system json files also supported. Github page');
+$content []= m_ul::_('<a href="https://github.com/redcap3000/html5_core" title="html 5 core">html5 core</a>','PHP5 HTML 5 Object Classes','Write standards conforming, and parameter validating html 5 using PHP5 objects.');
 
 $content []= m_ul::_('<a href="https://github.com/redcap3000/couchCurl" title="couchCurl">couchCurl</a>','Basic class for Apache Couch db interactions','A simple set of functions that generate and execute curl calls using php exec(). Supports most of the API methods, including; put, post, copy, updates, etc.');
 
