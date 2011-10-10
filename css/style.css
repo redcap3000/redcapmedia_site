@@ -1,3 +1,5 @@
+/* @override http://www.myparse.net/redcapmedia_site/css/style.css */
+
 /*
  * HTML5 Boilerplate
  *
@@ -310,7 +312,7 @@ nav:hover{
 	
 }
 nav a{
-	width: 8em;
+	width: 16em;
 	height: 2.8em;
 	text-align: center;
 	display: block;float: left;
@@ -387,7 +389,7 @@ p,ul{
 
 #main ul {
 	list-style-type: none;
-	margin: 0; padding: 0; float: left;
+	margin: 0; padding: 0; float: left;clear:right;
 	width: 15.46em;
 	border-top: solid gray .1em;
 }
@@ -404,7 +406,8 @@ p,ul{
 
 #main ul li p {
 	width: auto;
-	font-size: .9em;
+	margin-bottom: 0;
+	font-size: .85em;
 
 }
 

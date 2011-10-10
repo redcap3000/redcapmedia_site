@@ -25,7 +25,7 @@ $page = new page(
 											 new _a('open source',array('href'=>'foss.php')  ),
 										//	 new _a('video',array('href'=>'video.php')  ),
 										//	 new _a('sound',array('href'=>'sound.php')  ),
-											 new _a('contact',array('href'=>'contact.php')  )
+											 new _a('contact',array('href'=>'index.php')  )
 											)
 										)
 								)
