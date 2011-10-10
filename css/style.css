@@ -362,6 +362,12 @@ h1{
 font-size: 2em;
 }
 
+#main ul li h4 {
+	margin: 0; clear: both; float: left; width: 10.75em;
+}
+
+
+
 #main h3 {
 		background: url(../grx/hbg_d.png) repeat-x 0 -4.75em;
 	margin: 0;padding: 0; font-size: 2em;line-height:3.75em;
@@ -393,6 +399,16 @@ p,ul{
 	width: 15.46em;
 	border-top: solid gray .1em;
 }
+
+ul#profiles {
+width: 50%;	
+
+border:none;
+	margin-top: -6.4em;
+
+
+}
+
 
 
 #main ul li h5 {margin: .5em 0;
