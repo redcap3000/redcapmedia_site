@@ -248,7 +248,7 @@ font-size: 2em;
 #main h3 {
 		background: url(../grx/hbg_d.png) repeat-x 0 -4.75em;
 	margin: 0;padding: 0; font-size: 2em;line-height:3.75em;
-	text-align: right;margin-bottom: -.5em;
+	text-align: left;margin-bottom: -.5em;
 }
 
 body a{
@@ -276,6 +276,8 @@ p,ul{
 	width: 15.46em;
 	border-top: solid gray .1em;
 }
+
+
 
 ul#profiles {
 width: 50%;	
@@ -322,6 +324,31 @@ h2{color: maroon;font-size: 2.5em;margin-bottom:.5em;
 
 
 #main p img {margin: .5em; float: left;clear: both;}
+
+
+
+
+
+
+#main ul.img {
+	width: auto;
+}
+
+ul.img li{
+	padding: 2em 0;
+}
+
+
+.img img{
+	border: none;
+}
+
+.img h3 {
+	width: 50%;padding-top: 1em !IMPORTANT;
+	float: right;clear: right;
+
+}
+
 
 
 /* =============================================================================
