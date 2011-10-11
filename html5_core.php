@@ -178,6 +178,7 @@ class tag{
 		else{
 			if(is_a($obj, 'stdClass')) $obj = $this->std_to_tag($obj);
 			if($inner == NULL && $this->in)	$inner = $this->in;	
+			// theres a problem with inner processing and the html attributes
 			$inner =(is_object($this->in)? $this->in->make($this->in->inner,$this->in->at,$this->in->t) : ($inner!=NULL? $inner :  $this->in));
 		}
 
