@@ -26,6 +26,5 @@ $test []= img_li::_('<a href="http://www.floricavlad.com" title="Floricas Site">
 	
 	$content = new _ul($content,array('class'=>'img'));	
 	
-	die($content->make());
 		
 require ('page.php');
