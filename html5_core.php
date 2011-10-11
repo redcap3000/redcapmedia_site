@@ -5,12 +5,8 @@
 	A object oriented implementation of HTML 5, with json support. Always valid HTML ... 
 	If you are familiar with json structure, then this will feel right at home...
 	Define html pages/markup via objects and nested arrays, use the page object
-	to help build pages... use json_page() after make has been invoked...
-	also use load_json_page() to echo out a json encoded string.
-	
+	to help build pages... 	
 */
-
-
 
 class page{public $head,$body;
 	function stats(){
@@ -18,12 +14,9 @@ class page{public $head,$body;
 	. sprintf("%.4f", (((float) array_sum(explode(' ',microtime())))-$this->start_time)) . " seconds</em></p><p><em>Overhead memory : ".$this->oh_memory." k</em></p>";
 	}
 
-
 	function __construct($head=NULL,$body=NULL,$title=NULL,$b_at=NULL,$h_at=NULL){
 		$this->start_time = (float) array_sum(explode(' ',microtime()));
 		$this->oh_memory = round(memory_get_usage() / 1024);
-	
-	
 	// these are totally optional. If you provide a title tag in your head you dont need it...
 	// head attributes are rare... body attributes also kinda rare.. but provide assoc arrays
 		if($title) $this->title = $title;
@@ -31,10 +24,9 @@ class page{public $head,$body;
 		if($h_at) $this->h_at = $h_at;
 		$args = func_get_args();
 		// count the number of args to make sure it is no more than two
-		if(is_string($args[0]) && !is_array($args[1]) && count($args) <= 2){
+		if(is_string($args[0]) && !is_array($args[1]) && count($args) <= 2)
 		// if true then load from path		
 			return $this->load_json_page($args[0],( $args[1] == true?true:false));
-		}
 		$this->head = $head;
 		$this->body = $body;
 	}
@@ -48,28 +40,6 @@ class page{public $head,$body;
 		$result = new _html(array( new _head($this->head,$this->h_at) ,  new _body($this->body)) ,$this->b_at);
 		echo $result->make();
 	}
-	
-	function json_page(){
-	// to do make json smaller by removing a lot of the key names for 't' and 'at' .. and 
-	// turning into simple numerically indexed arrays
-		return json_encode($this);
-	}
-	
-	public function load_json_page($json,$from_file=false){
-		if($from_file != false)
-			// attempt to load the json as a file path
-			$json = file_get_contents($json);		
-		$json = json_decode($json);
-		
-		if(is_object($json)){
-		// what about html head and title attributes ??
-			$this->head = $json->head;
-			$this->body = $json->body;
-			$this->make_page(($this->h_at? $this->ht_at : NULL), ($this->b_at ? $this->b_at :NULL) ,($this->title? $this->title : NULL) );
-			// unset this_>he_at and the like to make it a more normal object incase it needs to be rewritten?
-		}else
-			echo "\nInvalid json, or json file path\n";
-	}
 }
 
 class tag{
@@ -80,14 +50,10 @@ class tag{
 	// for space, also these are not tags so it should be less confusing than 'i' and 'a'
 	// , or '0' and '3'
 		$arg_count = func_num_args();
-	
-		if(!$this->o){
+		if(!$this->o)
+			$this->o = ($this->a?  array_merge(array_keys($this->a),array_keys(html5_globals::$a)) : array_keys(html5_globals::$a));
 		// maybe combine the a and global arrays to generate a better default syntax for each tag??
-			if($this->a)
-				$this->o = array_merge(array_keys($this->a),array_keys(html5_globals::$a));
-			else
-				$this->o = array_keys(html5_globals::$a);
-			}
+			
 		if( ($arg_count > 1 && is_string($attr))  || ($arg_count >= 3 && is_string($attr . $tag) ) ){
 			$this->t =  ltrim(get_called_class(),'_');
 			$this->do_arg(func_get_args());
@@ -108,62 +74,37 @@ class tag{
 		$arg_count = count($args);
 		// this is if the developer wants to put in other parameters that are less common
 		// and not needed for most tags, accepts assoc. array
-		
 		if($arg_count > count($this->o) + 1)
 			return "\nToo many arguments ($arg_count) for $tag\n";
-		
-		if($arg_count > 0){
+		if($arg_count > 0)
 		// don't forget to validate class names etc..
-			foreach($this->o as $loc=>$tag_name){
-				if($args[$loc] && !is_array($args[$loc]) && !is_object($args[$loc])){
+			foreach($this->o as $loc=>$tag_name)
+				if($args[$loc] && !is_array($args[$loc]) && !is_object($args[$loc]))
 					if($tag_name == 'inner' && $args[$loc] != '')
 						$this->in = $args[$loc];
 					elseif( $this->validate_param($tag_name,$value) )
 						$this->at [$tag_name]= $args[$loc];
-				}elseif(is_object($args[$loc]) && $tag_name == 'inner'){
+				elseif(is_object($args[$loc]) && $tag_name == 'inner')
 					// process the object like any other tag ? store to inner ?
 					$this->in = $args[$loc];
-				}
-				
-				elseif(is_array($args[$arg_count-1])){
+				elseif(is_array($args[$arg_count-1]))
 					foreach($args[$arg_count-1] as $key=>$value){
 						$att_name = $this->o[$key];
 						if($this->validate_param($key,$value))
 							$this->at [$key] = $value;
 					}
-				}
-			}		
-		}
 		return true;
 	}
 	
 	function validate_param($param,$value=NULL,$array=NULL){
+	// using shorthand because every bit of memory helps when working with lots of tags
 	// checks $this->a, or any other array passed to see if values exist
 	// also checks the hthe html5 globals if not found in $array or $this->a
 	// switches the array to global if the class doesn't have it
 		$array = ( $array == NULL ? ($this->a? $this->a: html5_globals::$a) : $array);
-		if(is_array($array) && array_key_exists($param,$array))		
-			return (is_array($array[$param]) && $value != NULL? (in_array($value,$array[$param])? true:false) : true);
-		elseif(array_key_exists($param,html5_globals::$a))
-			return $this->validate_param($param,$value,html5_globals::$a);
-		else return false;
+		return (is_array($array) && array_key_exists($param,$array))?(is_array($array[$param]) && $value != NULL? (in_array($value,$array[$param])? true:false) : true): (array_key_exists($param,html5_globals::$a)? $this->validate_param($param,$value,html5_globals::$a) : false ) ;
 	}
-	
-	function std_to_tag($obj){
-		$new_class = '_'.$obj->t;
-		if(is_object($obj->in))
-		// convert std class into its class tag
-			$obj->in = $this->std_to_tag($obj->in);
-		if(is_object($obj->at)){
-		// convert object into assoc. array
-			foreach($obj->at as $x=>$y)
-				$arr[$x]=$y;
-			$obj->at = $arr;
-			unset($arr);
-		}
-		// attributes are returned as an object instead of array :(
-		return new $new_class($obj->in,$obj->at);
-	}
+	// could move this to the json_core class..
 	
 	function make($inner=NULL,$a=NULL,$tag=null){
 		if($tag == NULL) $tag = $this->t;
@@ -171,12 +112,12 @@ class tag{
 			foreach($this->in as $obj){
 			// json decoded objects dont retain their classnames and become std object makking this statement not possible...
 			// solution only store the values that are contained in whatever is passed into a new _a or new _whatever statement
-				if(is_a($obj, 'stdClass')) $obj = $this->std_to_tag($obj);
+				if(is_a($obj, 'stdClass')) $obj = json_core::std_to_tag($obj);
 				$inner .= $obj->make();
 			}
 			
 		else{
-			if(is_a($obj, 'stdClass')) $obj = $this->std_to_tag($obj);
+			if(is_a($obj, 'stdClass')) $obj = json_core::std_to_tag($obj);
 			if($inner == NULL && $this->in)	$inner = $this->in;	
 			// theres a problem with inner processing and the html attributes
 			$inner =(is_object($this->in)? $this->in->make($this->in->inner,$this->in->at,$this->in->t) : ($inner!=NULL? $inner :  $this->in));
@@ -185,25 +126,13 @@ class tag{
 		if($a == NULL){
 			if($this->at) $a = $this->at;
 			$this->a = ( $this->a? array_merge( $this->a,html5_globals::$a) : html5_globals::$a);
-			// storing the a attributes in every tag is ineeficent ...
 			}		
 		
 		if(is_array($a))
-			foreach($a as $key=>$value){
-				if((is_array($this->a[$key]) && array_key_exists($key, $this->a) && array_search($value, $this->a[$key]) )  ){
+			foreach($a as $key=>$value)
 				// add other keys here if they do not require quotes
-					$attr .= "$key='$value' ";
+					$attr .= trim(((is_array($this->a[$key]) && array_key_exists($key, $this->a) && array_search($value, $this->a[$key]) )  ? "$key='$value' " :  (array_key_exists($key,$this->a) && !is_array($this->a[$key])? ($key != 'charset'?"$key='$value' ":"$key=$value ") : ''))) ;
 				// validate values to see if it exists within the list						
-				}elseif(array_key_exists($key,$this->a) && !is_array($this->a[$key])){
-					$attr .= ($key != 'charset'?"$key='$value' ":"$key=$value ");
-				// some values wont need quotes...						
-				}
-				$attr = trim($attr);
-			// self close specific tags
-			// use parent child and math to determine when where to write these tags?
-		}
-		// how do we keep track of tabs... yikes.. if tag name is not html or head or body we get a bunch ?
-		// unsetting because of memory use.. probably attempt to unset tag name too and get by referring to classname
 		unset($this->a);
 		unset($this->o);
 		return "\n".   $delim ."<".$tag. ( $attr?" $attr":NULL). (in_array($tag,array('br','hr','link','meta'))?'/>' : ">$delim$inner$delim</$tag>" );
