@@ -18,7 +18,7 @@ $test []= img_li::_('<a href="http://www.doinglines.com" title="Doing Lines"><im
 
 $test []= img_li::_('<a href="http://www.sfblotter.com" title="sfblotter"><img src="img/screens/sfblotter_1.gif" alt="sfblotter"></a>','sfblotter','A Custom ikipress magazine style site that covers events in and around the San Francisco bay area.');
 
-$test []= img_li::_('<a href="http://www.floricavlad.com" title="Floricas Site"><img src="http://www.redcapmedia.com/img/web/floricavlad_iki.jpg" alt="Floricas Site" width="85%"></a>','Floricas Site','Florica Vlad.com - ikipress site that uses wordpress for content/user management.');
+$test []= img_li::_('<a href="http://www.floricavlad.com" title="Floricas Site"><img src="http://www.redcapmedia.com/img/web/floricavlad_iki.jpg" alt="Floricas Site"></a>','Floricas Site','Florica Vlad.com - ikipress site that uses wordpress for content/user management.');
 		
 	foreach($test as $obj){
 		$content .= $obj->make();

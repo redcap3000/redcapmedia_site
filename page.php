@@ -44,4 +44,6 @@ $page = new page(
 					 ,array('id'=>'container')
 			)),$page_title);
 			
-echo $page->make_page();			
+
+$page->make_page();	
+echo $page->stats();
