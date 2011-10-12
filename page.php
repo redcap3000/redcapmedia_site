@@ -1,5 +1,6 @@
 <?php
 
+require('json_core.php');
 if(!$meta_description) $meta_description = 'Web site portfolio for open source developer, designer, Ronaldo Barbachano.';
 
 $page = new page(
@@ -45,5 +46,4 @@ $page = new page(
 			)),$page_title);
 			
 
-$page->make_page();	
-echo $page->stats();
+echo $page->make_page();
