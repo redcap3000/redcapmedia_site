@@ -1,3 +1,8 @@
+/* @override 
+	http://redcapmedia.com/sandbox/css/style.css.pagespeed.ce.HgxX8OKiQu.css
+	http://redcapmedia.com/sandbox/css/style.css.pagespeed.ce.4P0x79YkVt.css
+*/
+
 /*  HTML5 Boilerplate  Nicolas Gallagher, Jonathan Neal, Kroc Camen, and the H5BP dev community and team. */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
@@ -180,8 +185,12 @@ p,ul{
 #main ul li p {
 	width: auto;
 	margin-bottom: 0;
-	font-size: .85em;
+	font-size: 1.1em;
 
+}
+
+#main ul.img li p {
+	margin-bottom: 3em;
 }
 
 #main ul li{float: left;
@@ -198,23 +207,26 @@ h2{color: maroon;font-size: 2.5em;margin-bottom:.5em;
 
 #main p img {margin: .5em; float: left;clear: both;}
 
+
 #main ul.img {
-	width: auto;
+width: 100%;
+}
+/*
+#main ul.img li{
+	
+	float: left;width: 20em;min-height: 30em;
+}
+*/
+ul#who {
+	width: 21.75em;
 }
 
-ul.img li{
-	padding: 2em 0;
+#who li strong{
+	margin: 0;text-align: left;
+	width:18em;float: left;
 }
 
-.img img{
-	border: none;
-}
 
-.img h3 {
-	width: 50%;padding-top: 1em !IMPORTANT;
-	float: right;clear: right;
-
-}
 
 /* =============================================================================
    Non-semantic helper classes

@@ -147,12 +147,30 @@ function __construct($inner='',$attr=NULL,$tag=NULL){
 		
 		if(is_array($a))
 			foreach($a as $key=>$value){
-				if((is_array($this->a[$key]) && array_key_exists($key, $this->a) && array_search($value, $this->a[$key]) )  ){
+			
+			// according to about.com ... html5 quotes aren't needed around any attribute unless it contains a space,
+			// equal sign, greater than sign or quotes of any kind
+				
+				if($value){
+					unset($to_quote);
+					
+					foreach(array(' ','=','>','"',"'") as $char)
+						if( strrpos($value,$char) !== false){
+							$to_quote = true;
+							break;
+							}
+				
+				// create config option to escape values or quote them
+				// look for '=' or '>'
+				}
+			
+			
+				if((is_array($this->a[$key]) && array_key_exists($key, $this->a) && in_array($value, $this->a[$key]) )  ){
 				// add other keys here if they do not require quotes
-					$attr .= "$key='$value' ";
+					$attr .= " $key='$value' ";
 				// validate values to see if it exists within the list						
 				}elseif(array_key_exists($key,$this->a) && !is_array($this->a[$key])){
-					$attr .= ($key != 'charset'?"$key='$value' ":"$key=$value ");
+					$attr .= ($key != 'charset' || $to_quote ?" $key='$value' ":" $key=$value ");
 				// some values wont need quotes...						
 				}
 				$attr = trim($attr);
@@ -170,7 +188,7 @@ function __construct($inner='',$attr=NULL,$tag=NULL){
 			unset($this->a);
 			
 		}
-		return "\n".   $delim ."<".$tag. ( $attr?" $attr":NULL). (in_array($tag,array('br','hr','link','meta'))?'/>' : ">$delim$inner$delim</$tag>" );
+		return "\n".   $delim ."<".$tag. ( $attr?" $attr":NULL). (in_array($tag,array('br','hr','link','meta','img'))?'>' : ">$delim$inner$delim</$tag>" );
 }
 	}
 	
@@ -249,8 +267,8 @@ class _link extends tag{public $a = array (
 class _meta extends tag{public $a = array (
 									'charset'=>'',
 									'content'=>'',
-									'http-equiv'=> array('content-type','expires','refresh','set-cookie','others'),
-									'name'=> array('author','description','keywords','generator','others'));
+									'http-equiv'=> array('content-type','expires','refresh','set-cookie','others')
+									,'name'=> array('author','description','keywords','generator','others'));
 									}
 // only supported in opera and chrome :/ come back and finish up
 class _nav extends tag{}

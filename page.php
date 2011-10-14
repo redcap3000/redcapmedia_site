@@ -1,6 +1,6 @@
 <?php
 
-require('json_core.php');
+//require('sandbox/json_core.php');
 if(!$meta_description) $meta_description = 'Web site portfolio for open source developer, designer, Ronaldo Barbachano.';
 
 $page = new page(
@@ -10,7 +10,7 @@ $page = new page(
 					new _meta(NULL,array('name'=>'author', 'content'=>'Ronaldo Barbacahno')),
 					new _meta(NULL,array('name'=>'viewport', 'content'=>'width=device-width,initial-scale=1')),
 					new _link(NULL,array('href'=>'http://fonts.googleapis.com/css?family=Geo', 'rel'=>'stylesheet' ,'type'=>'text/css')),
-					new _link(NULL,array('rel'=>"stylesheet", 'href'=>'css/style.css'))
+					new _link(NULL,array('rel'=>"stylesheet", 'href'=>'sandbox/css/style.css'))
 					
 				 ),
 			array(
